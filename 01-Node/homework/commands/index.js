@@ -23,7 +23,8 @@ const commands = {
   },
 
   curl: (param, done) => {
-    request(param, (err, data) => {
+    const first = param.split(' ')[0];
+    request(first, (err, data) => {
       if (err) throw err;
       done(data.body);
     });
